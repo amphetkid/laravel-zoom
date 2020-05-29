@@ -1,0 +1,47 @@
+{
+    "name": "muratsaglik/laravel-zoom",
+    "description": "Laravel Zoom Api",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Murat Saglik",
+            "email": "mrt.sglk@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "guzzlehttp/guzzle": "~6.0|~5.0|~4.0",
+        "firebase/php-jwt": "^5.0",
+        "illuminate/support": "^6.0|^7.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Muratsaglik\\Zoom\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Muratsaglik\\Zoom\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Muratsaglik\\Zoom\\Providers\\ZoomServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability" : "dev"
+}
