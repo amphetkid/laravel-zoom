@@ -20,10 +20,10 @@ class User extends Zoom
     public function createAUser( $postedData = array() )
     {
         $createAUserArray              = array();
-        $createAUserArray['action']    = $postedData['action'];
+        $createAUserArray['action']    = "create";
         $createAUserArray['user_info'] = array(
             'email'      => $postedData['email'],
-            'type'       => $postedData['type'],
+            'type'       => 1,
             'first_name' => $postedData['first_name'],
             'last_name'  => $postedData['last_name']
         );
