@@ -18,6 +18,7 @@ class Record extends Zoom
         $postData['from'] = ! empty( $data['from'] ) ? $data['from'] : $from;
         $postData['to']   = ! empty( $data['to'] ) ? $data['to'] : $to;
 
+
         return $this->sendRequest( 'users/' . $host_id . '/recordings', $postData, "GET" );
     }
 

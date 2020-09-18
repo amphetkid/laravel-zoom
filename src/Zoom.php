@@ -36,6 +36,8 @@ class Zoom
         $request_url = $this->api_url . $calledFunction;
 
         if ( $request == "GET" ) {
+            $data['from'] = "";
+            $data['to'] = date("Y-m-d-");
             $veri = ! empty( $data ) ? $data : array();
             $response = $client->request('GET', $request_url, $veri);
         } else if ( $request == "DELETE" ) {
@@ -50,6 +52,7 @@ class Zoom
         }
 
         $response =  $response ;
+
         /*dump($response);
         die;*/
 

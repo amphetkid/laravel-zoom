@@ -1,6 +1,9 @@
 # A Zoom API Package for Laravel
 
 ## Installation
+
+-  Update your composer.json file and composer update
+
 ```shell
 composer require muratsaglik/laravel-zoom
 ```

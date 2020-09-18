@@ -34,6 +34,18 @@ class Meeting extends Zoom
         $createAMeetingArray['timezone']   = $data['timezone'];
         $createAMeetingArray['password']   = ! empty( $data['password'] ) ? $data['password'] : "";
         $createAMeetingArray['duration']   = ! empty( $data['duration'] ) ? $data['duration'] : 60;
+        if(!empty($data['recurrence'])){
+            $createAMeetingArray['recurrence'] = array(
+                'type' =>   ! empty( $data['recurrence_type'] ) ? $data['recurrence_type'] : 1,
+                'repeat_interval' =>   ! empty( $data['repeat_interval'] ) ? $data['repeat_interval'] : 1,
+                'weekly_days' =>   ! empty( $data['recurrence_weekly_days'] ) ? $data['recurrence_weekly_days'] : "",
+                'monthly_day' =>   ! empty( $data['recurrence_monthly_day'] ) ? $data['recurrence_monthly_day'] : "",
+                'monthly_week' =>   ! empty( $data['recurrence_monthly_week'] ) ? $data['recurrence_monthly_week'] : "",
+                'monthly_week_day' =>   ! empty( $data['recurrence_monthly_week_day'] ) ? $data['recurrence_monthly_week_day'] : "",
+                'end_times' =>   ! empty( $data['recurrence_end_times'] ) ? $data['recurrence_end_times'] : "",
+                'end_date_time' =>   ! empty( $data['recurrence_end_date_time'] ) ? $data['recurrence_end_date_time'] : "",
+            );
+        }
         $createAMeetingArray['settings']   = array(
             'join_before_host'  => ! empty( $data['join_before_host'] ) ? true : false,
             'host_video'        => ! empty( $data['option_host_video'] ) ? true : false,
@@ -43,7 +55,7 @@ class Meeting extends Zoom
             'auto_recording'    => ! empty( $data['option_auto_recording'] ) ? $data['option_auto_recording'] : "none",
             'alternative_hosts' => isset( $alternative_host_ids ) ? $alternative_host_ids : ""
         );
-        
+
         if ( ! empty( $createAMeetingArray ) ) {
             return $this->sendRequest( 'users/' . $data['userId'] . '/meetings', $createAMeetingArray, "POST" );
         } else {
