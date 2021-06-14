@@ -5,28 +5,28 @@
 -  Update your composer.json file and composer update
 
 ```shell
-composer require muratsaglik/laravel-zoom
+composer require Amphetkid/laravel-zoom
 ```
 
 ## Configuration file
 
 ```shell
-php artisan vendor:publish --provider="Muratsaglik\Zoom\ZoomServiceProvider"
+php artisan vendor:publish --provider="Amphetkid\Zoom\ZoomServiceProvider"
 ```
 ## Usage
 > User List
 ```shell
-$zoom = new \Muratsaglik\Zoom\User();
+$zoom = new \Amphetkid\Zoom\User();
 $users = $zoom->listUsers();
 ```
 > Delete User
 ```shell
-$zoom = new \Muratsaglik\Zoom\User();
+$zoom = new \Amphetkid\Zoom\User();
 $delete = $zoom->deleteAUser($user_id);
 ```
 > Create Meeting
 ```shell
-$zoom = new \Muratsaglik\Zoom\Meeting();
+$zoom = new \Amphetkid\Zoom\Meeting();
 
 $array = [
     'userId' => $request->host,

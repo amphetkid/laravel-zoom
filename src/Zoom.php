@@ -1,11 +1,11 @@
 <?php
 
-namespace Muratsaglik\Zoom;
+namespace Amphetkid\Zoom;
 
 use Exception;
 use Firebase\JWT\JWT;
 use Illuminate\Support\Str;
-use Muratsaglik\Zoom\Interfaces\PrivateApplication;
+use Amphetkid\Zoom\Interfaces\PrivateApplication;
 use GuzzleHttp;
 
 class Zoom
@@ -36,9 +36,8 @@ class Zoom
         $request_url = $this->api_url . $calledFunction;
 
         if ( $request == "GET" ) {
-            $data['from'] = "";
-            $data['to'] = date("Y-m-d-");
-            $veri = ! empty( $data ) ? $data : array();
+
+            $veri = !empty( $data ) ? $data : array();
             $response = $client->request('GET', $request_url, $veri);
         } else if ( $request == "DELETE" ) {
             $veri  = ! empty( $data ) ? json_encode( $data ) : array();

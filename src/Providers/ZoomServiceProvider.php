@@ -1,6 +1,6 @@
 <?php
 
-namespace Muratsaglik\Zoom\Providers;
+namespace Amphetkid\Zoom\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -28,7 +28,7 @@ class ZoomServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(__DIR__.'/../../config/config.php', 'zoom');
-        $this->app->singleton('zoom', 'Muratsaglik\Zoom\Zoom');
-        $this->app->bind( 'Muratsaglik\Zoom\Zoom');
+        $this->app->singleton('zoom', 'Amphetkid\Zoom\Zoom');
+        $this->app->bind( 'Amphetkid\Zoom\Zoom');
     }
 }

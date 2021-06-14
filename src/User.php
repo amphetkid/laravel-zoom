@@ -1,6 +1,6 @@
 <?php
 
-namespace Muratsaglik\Zoom;
+namespace Amphetkid\Zoom;
 
 use Exception;
 use Firebase\JWT\JWT;
@@ -29,18 +29,18 @@ class User extends Zoom
         return $this->sendRequest( 'users', $listUsersArray, "GET" );
     }
 
-    public function createAUser( $postedData = array() )
+    public function createUser( $postedData = array() )
     {
-        $createAUserArray              = array();
-        $createAUserArray['action']    = "create";
-        $createAUserArray['user_info'] = array(
+        $createUserArray              = array();
+        $createUserArray['action']    = "create";
+        $createUserArray['user_info'] = array(
             'email'      => $postedData['email'],
             'type'       => 1,
             'first_name' => $postedData['first_name'],
             'last_name'  => $postedData['last_name']
         );
 
-        return $this->sendRequest( 'users', $createAUserArray, "POST" );
+        return $this->sendRequest( 'users', $createUserArray, "POST" );
     }
 
     public function getUserInfo($user_id)
@@ -55,5 +55,7 @@ class User extends Zoom
     {
         return $this->sendRequest( 'users/' . $userid, false, "DELETE" );
     }
+
+
 
 }

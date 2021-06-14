@@ -1,6 +1,6 @@
 <?php
 
-namespace Muratsaglik\Zoom;
+namespace Amphetkid\Zoom;
 
 use Exception;
 
